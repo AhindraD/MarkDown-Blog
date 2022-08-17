@@ -2,6 +2,7 @@ const express = require('express');
 const articlesRouter = require('./routes/articles');
 const mongoose = require('mongoose');
 const Articles = require('./models/article');
+const { urlencoded } = require('express');
 const app = express();
 
 mongoose
@@ -14,6 +15,8 @@ mongoose
 
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
+
+app.use(express.urlencoded({ extended: false }));
 app.use('/articles', articlesRouter);
 
 app.get('/', async (request, response) => {
