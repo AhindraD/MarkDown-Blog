@@ -13,7 +13,7 @@ mongoose
     .catch((err) => console.log('Error', err))
 
 app.set('view engine', 'ejs');
-
+app.use(express.static('public'));
 app.use('/articles', articlesRouter);
 
 app.get('/', async (request, response) => {
