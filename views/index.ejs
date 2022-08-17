@@ -12,9 +12,10 @@
 <body>
     <div class="cont">
         <h1>Best Blog Ever!</h1>
-        <p>
+        <br>
+        <h3>
             This blog is created with mongoDB, ExpressJS
-        </p>
+        </h3>
 
         <section class="articles-cont">
             <% articles.forEach(article=>{ %>
@@ -26,11 +27,13 @@
                         <%= article.author %>
                     </p>
                     <p class="date">
-                        <%= article.created_at %>
+                        <%= new Date(article.created_at).toLocaleString() %>
                     </p>
                     <p class="desc">
                         <%= article.body %>
                     </p>
+                    <a class="info-bttn" href=<%='/articles/details/' +article._id %>> info </a>
+                    <a class="del-bttn" href=<%='/articles/delete/' +article._id %>>❌</a>
                 </div>
                 <% }) %>
         </section>

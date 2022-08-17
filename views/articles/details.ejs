@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>The Article</title>
+</head>
+
+<body>
+
+    <section class="details-cont">
+        <div class="card">
+            <p class="title">
+                <%= article.title %>
+            </p>
+            <p class="author">
+                <%= article.author %>
+            </p>
+            <p class="date">
+                <%= article.created_at %>
+            </p>
+            <p class="desc">
+                <%= article.body %>
+            </p>
+        </div>
+
+        <div class="nav">
+            <a href="/" class="home-bttn"> ◀ HOME </a>
+            <a class="delete-bttn" href=<%='/articles/delete/' +article._id %>>Delete🚀</a>
+            <a class="edit-bttn" href=<%='/articles/edit/' +article._id %>>Edit ✍🏻</a>
+        </div>
+    </section>
+
+
+
+</body>
+
+</html>
